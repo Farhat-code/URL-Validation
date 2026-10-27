@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Checker</title>
+  </head>
+  <body>
+    <main class="card">
+      <h1>URL Checker</h1>
+      <p class="subtitle">
+        Type a URL to check whether it exists on the mock server, and whether it
+        is a file or a folder.
+      </p>
+
+      <label for="url-input" class="label">URL</label>
+      <input
+        id="url-input"
+        type="text"
+        inputmode="url"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+        placeholder="https://example.com/docs/readme.md"
+        aria-describedby="status"
+        aria-invalid="false"
+      />
+
+      <div
+        id="status"
+        class="status"
+        role="status"
+        aria-live="polite"
+        data-tone="neutral"
+      >
+        <span id="status-icon" class="status-icon" aria-hidden="true"></span>
+        <div>
+          <p id="status-title" class="status-title"></p>
+          <p id="status-detail" class="status-detail"></p>
+        </div>
+      </div>
+
+      <section class="examples" aria-labelledby="examples-title">
+        <h2 id="examples-title">Try an example</h2>
+        <div class="chips">
+          <button
+            type="button"
+            data-example="https://example.com/docs/readme.md"
+          >
+            📄 File
+          </button>
+          <button type="button" data-example="https://example.com/images/">
+            📁 Folder
+          </button>
+          <button
+            type="button"
+            data-example="http://localhost:3000/api/users.json"
+          >
+            📄 localhost file
+          </button>
+          <button type="button" data-example="https://example.com/missing.txt">
+            ∅ Not found
+          </button>
+          <button type="button" data-example="example.com">
+            ✕ No protocol
+          </button>
+          <button type="button" data-example="ftp://example.com">
+            ✕ Unsupported protocol
+          </button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
